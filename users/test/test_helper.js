@@ -16,9 +16,14 @@ before((done) => {
 
 
 beforeEach((done) => {
+    const { users, comments, blogposts } = mongoose.connection.collections;     //mongoDB normalize from "blogPosts" into "blogposts"
     // Delete users data in DB
-    mongoose.connection.collections.users.drop(()=>{
-        // Reaady to run the next test!
-        done();
+    // No mutli drops at same time in mongoDB
+    users.drop(()=>{
+        comments.drop(() => {
+            blogposts.drop(() => {
+                done();
+            });
+        });
     });
 });

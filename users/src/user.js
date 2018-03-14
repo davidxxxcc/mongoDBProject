@@ -13,8 +13,27 @@ const UserSchema = new Schema({
         },
         required: [true, 'Name is required']  // show info user friendly string, will showup in at validationResult.errors.name
     },
-    postCount: Number,
-    posts:[PostSchema]  
+    posts:[PostSchema],
+    likes: Number,
+    blogPosts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'blogPost'
+    }]
+});
+
+// this refers to the instacne
+UserSchema.virtual('postCount').get(function() {
+    return this.posts.length;
+});
+
+// Middleware
+UserSchema.pre('remove', function(next) {
+    // this === joe
+    const BlogPost = mongoose.model('blogPost');
+
+    BlogPost.remove({ _id: { $in: this.blogPosts }})
+        .then(() => next());
+
 });
 
 // User class
