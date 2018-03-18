@@ -3,19 +3,19 @@ const User = require('./user');
 const BlogPost = require('./blogPost');
 const Comment = require('./comment');
 
-//global.Promise ES6 standard
-mongoose.Promise = global.Promise;
+// //global.Promise ES6 standard
+// mongoose.Promise = global.Promise;
 
-beforeAll((done) => {
-    mongoose.connect('mongodb://localhost/users_jest_test');
-    mongoose.connection
-        .once('open', () => {
-            done();
-        })
-        .on('error', (error) => {
-            console.warn('Warning', error);
-        });
-});
+// beforeAll((done) => {
+//     mongoose.connect('mongodb://localhost/users_jest_test');
+//     mongoose.connection
+//         .once('open', () => {
+//             done();
+//         })
+//         .on('error', (error) => {
+//             console.warn('Warning', error);
+//         });
+// });
 
 beforeEach((done) => {
     const { users, comments, blogposts } = mongoose.connection.collections;
@@ -29,10 +29,10 @@ beforeEach((done) => {
     });
 });
 
-afterAll((done) => {
-    mongoose.disconnect();
-    done();
-});
+// afterAll((done) => {
+//     mongoose.disconnect();
+//     done();
+// });
 
 
 describe('Middleware', () => {

@@ -18,7 +18,8 @@
   "jest": {
     "testEnvironment": "node",
     "setupFiles": [
-      "./setup.js"
+      "./setup.js",
+      "./teardown.js"
     ] ,
     "testRegex": "\\.test\\.js$"
   }
