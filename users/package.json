@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon --exec jest"
+    "test": "nodemon --exec jest --runInBand"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,12 @@
     "mongodb-memory-server": "^1.7.0",
     "mongoose": "^5.0.9",
     "nodemon": "^1.17.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "./setup.js"
+    ] ,
+    "testRegex": "\\.test\\.js$"
   }
 }
