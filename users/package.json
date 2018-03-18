@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "nodemon --exec jest --runInBand"
-=======
-    "test": "nodemon --exec jest runInBand"
->>>>>>> 33fe7830edc3824e1668a6465a4eae0e13c2f696
   },
   "author": "",
   "license": "ISC",
@@ -20,14 +16,10 @@
     "nodemon": "^1.17.1"
   },
   "jest": {
-<<<<<<< HEAD
     "testEnvironment": "node",
     "setupFiles": [
       "./setup.js"
     ] ,
     "testRegex": "\\.test\\.js$"
-=======
-    "testEnvironment": "node"
->>>>>>> 33fe7830edc3824e1668a6465a4eae0e13c2f696
   }
 }
