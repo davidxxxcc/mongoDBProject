@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 const User = require('./user');
 const BlogPost = require('./blogPost');
 const Comment = require('./comment');
 const mongoose = require('mongoose');
 
+=======
+const mongoose = require('mongoose');
+const User = require('./user');
+const BlogPost = require('./blogPost');
+const Comment = require('./comment');
+>>>>>>> 33fe7830edc3824e1668a6465a4eae0e13c2f696
 
 //global.Promise ES6 standard
 mongoose.Promise = global.Promise;
